@@ -29,7 +29,8 @@ public class JWTFilter implements Filter {
 				
 		System.out.println("Calling doFilter method !!");
 		String token = request.getParameter("userToken");
-		if(!token.equals(null)) {
+		System.out.println("token : " + token);
+		if(!token.equals(null) || !token.equals("")) {
 			verifyToken = new VerifyToken();
 			isValidToken = verifyToken.parseJWT(token);
 			if(isValidToken) {
@@ -38,8 +39,10 @@ public class JWTFilter implements Filter {
 				PrintWriter out = response.getWriter();
 				out.println("Invalid Token !!");
 			}
-			System.out.println("isValidToken : " + isValidToken);
-		}		
+		} else {
+			System.out.println("Invalid Token !!");
+		}
+		System.out.println("isValidToken : " + isValidToken);
 	}
 
 	public void destroy() {}
