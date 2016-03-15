@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet" href="css/custom.css" />
+<script src="angular.min.js"></script><style>
+</style>
+</head>
+<body ng-app='myApp' ng-controller='dashboardCtrl'>
+	<div align="center">
+		<div class="wrapdiv" style="height: 100%; width: 100%;">
+			<div class="topbar"
+				style="height: 50px; line-height: 50px; text-align: right; border-bottom: 1px solid #ddd;">
+				<font class="welcome" style="margin-right: 15px;">Welcome : {{username}}</font>
+			</div>
+			<div class="mainbar">
+				<table class="dashboar"
+					style="position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; margin: auto; width: 100%; text-align: center;">
+
+					<tr>
+						<td><a ng-href="#/viewtickets/{{username}}">View Tickets Link</a></td>
+
+					</tr>
+					<tr>
+						<td><a ng-href="#/addticket/{{username}}">Add Tickets Link</a></td>
+
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
